@@ -1,0 +1,156 @@
+.icons-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.icons-header {
+  max-width: 1480px;
+  margin: 0 auto 16px auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111;
+}
+
+.dark .icons-title {
+  color: #fff;
+}
+
+.icons-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.icons-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dark .icons-btn {
+  background: #222;
+  border-color: #555;
+}
+
+.icons-btn .material-symbols-outlined {
+  color: #111;
+}
+
+.dark .icons-btn .material-symbols-outlined {
+  color: #fff;
+}
+
+/* Scroll */
+.icons-scroll {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  cursor: grab;
+}
+
+.icons-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.icons-scroll:active {
+  cursor: grabbing;
+}
+
+/* Cards */
+.icons-card {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+}
+
+.dark .icons-card {
+  background: #222;
+  border-radius: 14px;
+}
+
+/* Image */
+.icons-img-wrap {
+  width: 100%;
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.icons-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dark .icons-img-wrap img {
+  filter: brightness(0.95);
+}
+
+/* Text BELOW image — centered & no background */
+.icons-text {
+  font-size: 18px;
+  margin-top: 12px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  color: #111;
+}
+
+.dark .icons-text {
+  color: #fff;
+}
+
+
+@media (max-width: 600px) {
+
+  .icons-scroll {
+    padding: 0;     /* remove wide padding */
+    gap: 0;         /* remove card gaps */
+  }
+
+  .icons-card {
+    flex: 0 0 88%;  /* slightly smaller than screen width */
+    margin: 0 6%;   /* equal left + right margin  */
+    scroll-snap-align: center;
+  }
+
+  /* Center image + avoid touching edges */
+  .icons-img-wrap {
+    height: 200px;  /* better mobile height */
+    border-radius: 12px;
+  }
+
+  /* Better mobile text sizing */
+  .icons-text {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  /* Hide arrows on small screens */
+  .icons-controls {
+    display: none !important;
+  }
+
+  /* Reduce title slightly */
+  .icons-title {
+    font-size: 22px;
+    padding-left: 10px;
+  }
+}

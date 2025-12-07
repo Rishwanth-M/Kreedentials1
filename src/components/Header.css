@@ -1,0 +1,369 @@
+/* ===========================================================
+   CORE HEADER TRANSITION & BASE LOGIC
+   =========================================================== */
+.header-main {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255,255,255,0.9);
+  transition: transform .35s ease, opacity .35s ease;
+  backdrop-filter: blur(10px);
+}
+.dark .header-main {
+  background: rgba(0,0,0,0.9);
+}
+
+/* Scroll Hide/Show */
+.header-hide {
+  transform: translateY(-100%);
+}
+
+/* Shrink When Scroll Up */
+.header-shrink .main-nav {
+  transform: scale(0.95);
+}
+.header-shrink .logo-img {
+  width: 60px !important;
+}
+.header-shrink .top-utility {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Shadow when visible */
+.header-main:not(.header-hide) {
+  box-shadow: 0 2px 18px rgba(0,0,0,0.10);
+}
+
+/* General Button Style */
+.plaintext-btn,
+.icon-outline-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navigation Hover Effect (Desktop) */
+.nav-item {
+  position: relative;
+  padding-bottom: 3px;
+}
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: .25s ease;
+  transform: translateX(-50%);
+}
+.nav-item:hover::after {
+  width: 80%;
+}
+
+/* Icon Size */
+.material-symbols-outlined {
+  font-size: 24px;
+}
+
+
+/* ===========================================================
+   DESKTOP NAV CENTERING & SPACING — Kreedentials STYLE
+   =========================================================== */
+.desktop-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+
+/* ===========================================================
+   RIGHT ICONS — Mobile alignment tight right
+   =========================================================== */
+.icon-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* Desktop Search */
+.search-field {
+  background: #eee;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.dark .search-field {
+  background: #222;
+}
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  width: 80px;
+}
+
+
+/* ===========================================================
+   MOBILE MENU
+   =========================================================== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background: #fff;
+  color: #111;
+  z-index: 2000;
+  padding: 20px;
+  transition: right .35s ease;
+  overflow-y: auto;
+}
+.mobile-menu.open {
+  right: 0;
+}
+.dark .mobile-menu {
+  background: #000;
+  color: #fff;
+}
+
+.close-menu {
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+/* MENU LINKS */
+.menu-links li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 16px 0;
+  cursor: pointer;
+}
+.chevron {
+  font-size: 24px;
+}
+
+/* Jordan Section */
+.menu-jordan {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 25px 0;
+}
+.jordan-icon {
+  width: 24px;
+}
+.dark .jordan-icon {
+  filter: invert(100%);
+}
+
+/* Member Info */
+.menu-member {
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+.menu-member .underline {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.menu-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.join-btn,
+.signin-btn {
+  flex: 1;
+  padding: 11px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+.join-btn {
+  background: #000;
+  color: #fff;
+}
+.dark .join-btn {
+  background: #fff;
+  color: #000;
+}
+.signin-btn {
+  background: #eee;
+}
+.dark .signin-btn {
+  background: #333;
+  color: #fff;
+}
+
+/* Bottom Tools */
+.menu-tools li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+
+/* ===========================================================
+   MOBILE SEARCH OVERLAY
+   =========================================================== */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 2100;
+  opacity: 0;
+  pointer-events: none;
+  transition: .35s ease;
+  padding: 20px;
+}
+.search-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.dark .search-overlay {
+  background: #000;
+  color: #fff;
+}
+.close-search {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  margin-bottom: 18px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: solid 1px gray;
+  padding-bottom: 10px;
+}
+.search-container input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 18px;
+  flex: 1;
+}
+
+
+/* ===========================================================
+   DARK BACKDROP (for menu + search)
+   =========================================================== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: .35s ease;
+  z-index: 1500;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* ===========================================================
+   MOBILE RESPONSIVE FIXES
+   =========================================================== */
+@media (max-width: 1024px) {
+  .top-utility {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .main-nav {
+    grid-template-columns: 1fr auto !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  /* Right icon group always pushed to far right */
+  .icon-row {
+    justify-content: flex-end !important;
+    gap: 6px !important;
+    margin-left: auto !important;
+    padding-right: 4px !important;
+  }
+
+  .icon-row button {
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    width: 70px;
+    margin: 0 !important;
+  }
+
+  .search-field {
+    display: none !important;
+  }
+}
+
+
+/* ============================================ */
+/* FIX HEADER SPACING + VERTICAL ALIGNMENT      */
+/* ============================================ */
+
+/* Reduce gap between top bar + main header */
+.top-utility {
+  padding-bottom: 2px !important;
+}
+.main-nav {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+/* Align logo + icons flush vertically */
+.logo-img {
+  display: block;
+  height: auto;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.icon-row .material-symbols-outlined {
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+.icon-outline-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+/* Ensure icons don’t float up when shrinking */
+.header-shrink .icon-row {
+  transform: translateY(0) !important;
+}
