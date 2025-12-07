@@ -2,12 +2,11 @@ import React, { useRef } from "react";
 import "./ShopGiftsBySport.css";
 
 const sports = [
-  { title: 'Running', img: 'https://images.pexels.com/photos/1401796/pexels-photo-1401796.jpeg?w=1600' },
-  { title: 'Training', img: 'https://images.pexels.com/photos/6453399/pexels-photo-6453399.jpeg?w=1600' },
-  { title: 'Football', img: 'https://images.pexels.com/photos/3991875/pexels-photo-3991875.jpeg?w=1600' },
-  { title: 'Basketball', img: 'https://images.pexels.com/photos/3757374/pexels-photo-3757374.jpeg?w=1600' },
-  { title: 'Yoga', img: 'https://images.pexels.com/photos/3823035/pexels-photo-3823035.jpeg?w=1600' },
-  { title: 'Gym', img: 'https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?w=1600' }
+  { title: 'T-Shirt', img: 'https://res.cloudinary.com/dafoanpxr/image/upload/v1763276540/IMG_9126_jzxr8o.jpg' },
+  { title: 'Shorts', img: 'https://res.cloudinary.com/dafoanpxr/image/upload/v1763276541/IMG_9123_qccgy3.jpg' },
+  { title: 'Socks', img: 'https://res.cloudinary.com/dafoanpxr/image/upload/v1763276506/IMG_9124_oeqqb4.jpg' },
+  { title: 'Cap', img: 'https://res.cloudinary.com/dafoanpxr/image/upload/v1765096469/Black_cap_boy_gkzdq4.jpg' },
+  { title: 'Jacket', img: 'https://res.cloudinary.com/dafoanpxr/image/upload/v1763276504/IMG_9122_xk9xum.jpg' },
 ];
 
 const ShopGiftsBySport = () => {
