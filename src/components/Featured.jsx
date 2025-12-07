@@ -6,12 +6,12 @@ const tiles = [
   {
     eyebrow: 'Kreedentials Pegasus Premium',
     title: 'For the Ultimate Energised Ride',
-    img: 'https://images.pexels.com/photos/999309/pexels-photo-999309.jpeg?w=1900',
+    img: 'https://res.cloudinary.com/dafoanpxr/image/upload/v1765097127/IMG_9504_i3q2jx.jpg',
   },
   {
     eyebrow: "Women's Training Gear",
     title: 'Power Up Your Workouts',
-    img: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?w=1900',
+    img: 'https://res.cloudinary.com/dafoanpxr/image/upload/v1765096947/Gemini_Generated_Image_hd7w7rhd7w7rhd7w_1_ocxnej.png',
   },
 ]
 
