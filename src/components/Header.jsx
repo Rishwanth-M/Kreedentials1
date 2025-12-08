@@ -5,34 +5,31 @@ import { Link, useNavigate } from "react-router-dom";
 const navItems = ['New & Featured', 'Boys', 'Girls', 'Unisex', 'Sale'];
 
 function useDarkMode() {
-  // Read saved preference first; default to light (false)
   const [enabled, setEnabled] = React.useState(() => {
     if (typeof window === "undefined") return false;
-    try {
-      const saved = localStorage.getItem("theme");
-      if (saved === "dark") return true;
-      if (saved === "light") return false;
-    } catch (e) {
-      // ignore
-    }
-    // default to light
+
+    // Check saved theme first
+    const saved = localStorage.getItem("theme");
+
+    if (saved === "dark") return true;
+    if (saved === "light") return false;
+
+    // DEFAULT THEME → LIGHT
     return false;
   });
 
   React.useEffect(() => {
     const root = document.documentElement;
-    if (enabled) root.classList.add('dark');
-    else root.classList.remove('dark');
 
-    try {
-      localStorage.setItem('theme', enabled ? 'dark' : 'light');
-    } catch (e) {
-      // ignore
-    }
+    if (enabled) root.classList.add("dark");
+    else root.classList.remove("dark");
+
+    localStorage.setItem("theme", enabled ? "dark" : "light");
   }, [enabled]);
 
   return [enabled, setEnabled];
 }
+
 
 const Header = () => {
   const navigate = useNavigate();               // <-- moved inside component
